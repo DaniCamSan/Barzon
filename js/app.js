@@ -212,7 +212,7 @@ btnIngresarI.addEventListener("click",function() {
 }); //boton Ingresar
 
 function abrirBarra() {
-    document.getElementById("barraMenu").style.width = "250";
+    document.getElementById("barraMenu").style.width = "250px";
 }
 
 function cerrarBarra() {
@@ -258,15 +258,13 @@ btnOpen.addEventListener("click", function(){
 
 camera.addEventListener("change", function(e){
     ruta = URL.createObjectURL(e.target.files[0]);
+    photo.src = ruta;
     obtenerLugar();
-    photo.src = ruta();
-//     photo.srcObject = URL.createObjectURL(e.target.files[0]);
     if(obtenerSO() == "iOS"){
     let link = document.createElement('a');
-    link.download = "test.png";
-    // link.href = photo.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    link.href = ruta();
-    link.click();
+        link.download = "tet.png";
+        link.href = ruta();
+        link.click();
     alert("Foto Capturada");
     }
 }); 
